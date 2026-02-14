@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: restaurant
+
+  datasource:
+    url: jdbc:postgresql://localhost/restaurante_criollo
+    username: postgres
+    password: 4512
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: restaurante
+
+# ===============================
+# SWAGGER / OPENAPI (springdoc)
+# ===============================
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    display-request-duration: true
+
+# ===============================
+# SERVER (opcional)
+# ===============================
+server:
+  port: 8080
+
